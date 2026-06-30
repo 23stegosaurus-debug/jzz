@@ -130,6 +130,19 @@ a {
   font-size: 0.9rem;
 }
 
+.banner {
+  width: 100%;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 .hero-card,
 .info-card,
 .price-card,
@@ -170,11 +183,24 @@ a {
 .price-card {
   text-align: center;
   border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(47, 143, 67, 0.5);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
 }
 
 .price-card.featured {
   border: 2px solid var(--green);
   transform: translateY(-3px);
+  background: #f9fff5;
+}
+
+.price-card.featured:hover {
+  border-color: var(--green-dark);
+  background: #eff9ec;
 }
 
 .price {
