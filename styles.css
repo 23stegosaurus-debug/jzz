@@ -132,15 +132,26 @@ a {
 
 .banner {
   width: 100%;
+  padding: 1rem 1rem 0;
+  background: linear-gradient(180deg, #f3f8f3 0%, var(--white) 100%);
+}
+
+.banner-frame {
+  width: min(1200px, 100%);
+  margin: 0 auto;
   overflow: hidden;
-  background: var(--black);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(16, 16, 16, 0.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
 }
 
 .banner img {
   width: 100%;
   height: auto;
+  max-height: 320px;
   display: block;
   object-fit: cover;
+  object-position: center;
 }
 
 .hero-card,
