@@ -17,9 +17,9 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--black);
-  background: var(--white);
+  background: linear-gradient(135deg, #f8fcf8 0%, #f2f9f2 45%, #eef6ee 100%);
   line-height: 1.6;
 }
 
@@ -34,9 +34,36 @@ a {
 }
 
 .hero {
-  background: linear-gradient(135deg, #0f140f 0%, #1f2c20 50%, var(--green-dark) 100%);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f140f 0%, #1f2c20 45%, var(--green-dark) 100%);
   color: var(--white);
   padding-bottom: 4rem;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.25;
+}
+
+.hero::before {
+  width: 240px;
+  height: 240px;
+  background: #4ea869;
+  right: -60px;
+  top: -90px;
+}
+
+.hero::after {
+  width: 160px;
+  height: 160px;
+  background: #8bcf99;
+  left: -40px;
+  bottom: -40px;
 }
 
 .nav {
@@ -158,11 +185,12 @@ a {
 .info-card,
 .price-card,
 .order-form {
-  background: var(--white);
+  background: rgba(255,255,255,0.97);
   color: var(--black);
   border-radius: 1.25rem;
   padding: 1.3rem;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.16);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.14);
+  border: 1px solid rgba(16,16,16,0.06);
 }
 
 .hero-card ul {
@@ -175,7 +203,7 @@ a {
 }
 
 .section-alt {
-  background: var(--soft);
+  background: linear-gradient(180deg, rgba(232,244,234,0.85), rgba(243,252,244,1));
 }
 
 .split {
@@ -191,6 +219,13 @@ a {
   gap: 1rem;
 }
 
+.pricing-note {
+  max-width: 760px;
+  margin: 0 0 1.2rem;
+  color: #35533c;
+  font-weight: 600;
+}
+
 .price-card {
   text-align: center;
   border: 1px solid var(--border);
@@ -201,17 +236,6 @@ a {
   transform: translateY(-4px);
   border-color: rgba(47, 143, 67, 0.5);
   box-shadow: 0 16px 32px rgba(0,0,0,0.12);
-}
-
-.price-card.featured {
-  border: 2px solid var(--green);
-  transform: translateY(-3px);
-  background: #f9fff5;
-}
-
-.price-card.featured:hover {
-  border-color: var(--green-dark);
-  background: #eff9ec;
 }
 
 .price {
@@ -276,7 +300,22 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+}
+
+.social-link.instagram-link {
+  background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+}
+
+.social-link.facebook-link {
+  background: #1877f2;
 }
 
 .social-links svg {
