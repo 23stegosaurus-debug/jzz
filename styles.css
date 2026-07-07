@@ -191,11 +191,11 @@ a {
 
 .banner img {
   width: 100%;
-  height: min(34vw, 360px);
-  min-height: 220px;
+  height: auto;
+  max-height: 360px;
   display: block;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  object-position: center bottom;
   background: #f8fcf8;
 }
 
